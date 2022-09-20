@@ -3,13 +3,30 @@ local keymap = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
 local expr_opts = { noremap = true, expr = true, silent = true }
 
+local m = {}
+for _, val in pairs({'n', 'v', 't', 'i', 'x'}) do
+  m[val] = function(lhs, rhs)
+    return keymap(val, lhs, rhs, default_opts)
+  end
+end
+
+
 -- Better escape using jk in insert and terminal mode
-keymap("i", "jk", "<ESC>", default_opts)
-keymap("t", "jk", "<C-\\><C-n>", default_opts)
+--[[ keymap("i", "jk", "<ESC>", default_opts) ]]
+--[[ keymap("t", "jk", "<C-\\><C-n>", default_opts) ]]
 keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", default_opts)
 keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", default_opts)
 keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", default_opts)
 keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", default_opts)
+m.i('kj', '<esc>')
+m.t('kj', '<c-\\><c-n>')
+m.v('kj', '<esc>')
+
+-- window movements
+m.n('<a-h>', '<c-w>h')
+m.n('<a-j>', '<c-w>j')
+m.n('<a-k>', '<c-w>k')
+m.n('<a-l>', '<c-w>l')
 
 -- Center search results
 keymap("n", "n", "nzz", default_opts)

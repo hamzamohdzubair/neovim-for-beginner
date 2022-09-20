@@ -71,6 +71,7 @@ local function normal_keymap()
       s = { "<Cmd>Telescope attempt<Cr>", "Search" },
     },
 
+    e = { "<cmd> NvimTreeToggle<cr>", "files" },
     b = {
       name = "Buffer",
       c = { "<Cmd>BDelete this<Cr>", "Close Buffer" },

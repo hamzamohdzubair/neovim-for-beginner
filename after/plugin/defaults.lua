@@ -22,7 +22,7 @@ opt.smartcase = true -- Smart case
 opt.updatetime = 250 --Decrease update time
 opt.signcolumn = "yes" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
-opt.timeoutlen = 300 --	Time in milliseconds to wait for a mapped sequence to complete.
+opt.timeoutlen = 600 --	Time in milliseconds to wait for a mapped sequence to complete.
 opt.showmode = false -- Do not need to show the mode. We use the statusline instead.
 opt.scrolloff = 8 -- Lines of context
 -- opt.scrolloff = 999 -- Lines of context
@@ -52,6 +52,18 @@ opt.whichwrap:append "<>[]hl"
 
 -- disable nvim intro
 opt.shortmess:append "sI"
+opt.scrolloff = 999
+opt.cursorline = true
+opt.cursorcolumn = true
+opt.splitbelow = true
+opt.splitright = true
+
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.textwidth = 120
+opt.expandtab = true
+opt.autoindent = true
 
 -- Better search
 opt.path:remove "/usr/include"
