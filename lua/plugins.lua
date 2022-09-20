@@ -65,7 +65,17 @@ function M.setup()
     }
 
     -- Better Netrw
-    use { "tpope/vim-vinegar" }
+    -- use { "tpope/vim-vinegar" }
+
+    -- autopairs
+    use('cohama/lexima.vim')
+
+    -- surround
+    use{'kylechui/nvim-surround',
+      config = function()
+        require('nvim-surround').setup{}
+      end
+    }
 
     -- Git
     use {
@@ -115,7 +125,6 @@ function M.setup()
     -- Motions
     use { "andymass/vim-matchup", event = "CursorMoved" }
     use { "wellle/targets.vim", event = "CursorMoved" }
-    use { "unblevable/quick-scope", event = "CursorMoved", disable = false }
     use { "chaoren/vim-wordmotion", opt = true, fn = { "<Plug>WordMotion_w" } }
 
     use {
@@ -128,7 +137,7 @@ function M.setup()
     }
     use {
       "ggandor/lightspeed.nvim",
-      keys = { "s", "S", "f", "F", "t", "T" },
+      keys = { "s", "f", "F", "t", "T" },
       config = function()
         require("lightspeed").setup {}
       end,
