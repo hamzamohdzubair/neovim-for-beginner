@@ -54,27 +54,34 @@ function M.setup()
     }
 
     -- Colorscheme
-    use {
-      "sainnhe/everforest",
+    use {"sainnhe/everforest",
       config = function()
         vim.cmd "colorscheme everforest"
       end,
     }
 
     -- Startup screen
-    use {
-      "goolord/alpha-nvim",
+    use {"goolord/alpha-nvim",
       config = function()
         require("config.alpha").setup()
       end,
     }
 
     -- Better Netrw
-    use { "tpope/vim-vinegar" }
+    -- use { "tpope/vim-vinegar" }
+
+    -- autopairs
+    use('cohama/lexima.vim')
+
+    -- surround
+    use{'kylechui/nvim-surround',
+      config = function()
+        require('nvim-surround').setup{}
+      end
+    }
 
     -- Git
-    use {
-      "TimUntersberger/neogit",
+    use {"TimUntersberger/neogit",
       cmd = "Neogit",
       config = function()
         require("config.neogit").setup()
@@ -82,8 +89,7 @@ function M.setup()
     }
 
     -- WhichKey
-    use {
-      "folke/which-key.nvim",
+    use {"folke/which-key.nvim",
       event = "VimEnter",
       config = function()
         require("config.whichkey").setup()
@@ -91,8 +97,7 @@ function M.setup()
     }
 
     -- IndentLine
-    use {
-      "lukas-reineke/indent-blankline.nvim",
+    use {"lukas-reineke/indent-blankline.nvim",
       event = "BufReadPre",
       config = function()
         require("config.indentblankline").setup()
@@ -100,8 +105,7 @@ function M.setup()
     }
 
     -- Better icons
-    use {
-      "kyazdani42/nvim-web-devicons",
+    use {"kyazdani42/nvim-web-devicons",
       module = "nvim-web-devicons",
       config = function()
         require("nvim-web-devicons").setup { default = true }
@@ -109,8 +113,7 @@ function M.setup()
     }
 
     -- Better Comment
-    use {
-      "numToStr/Comment.nvim",
+    use { "numToStr/Comment.nvim",
       keys = { "gc", "gcc", "gbc" },
       config = function()
         require("Comment").setup {}
@@ -123,7 +126,6 @@ function M.setup()
     -- Motions
     use { "andymass/vim-matchup", event = "CursorMoved" }
     use { "wellle/targets.vim", event = "CursorMoved" }
-    use { "unblevable/quick-scope", event = "CursorMoved", disable = false }
     use { "chaoren/vim-wordmotion", opt = true, fn = { "<Plug>WordMotion_w" } }
 
     use {
@@ -136,15 +138,14 @@ function M.setup()
     }
     use {
       "ggandor/lightspeed.nvim",
-      keys = { "s", "S", "f", "F", "t", "T" },
+      keys = { "s", "f", "F", "t", "T" },
       config = function()
         require("lightspeed").setup {}
       end,
     }
 
     -- Markdown
-    use {
-      "iamcco/markdown-preview.nvim",
+    use {"iamcco/markdown-preview.nvim",
       run = function()
         vim.fn["mkdp#util#install"]()
       end,
@@ -153,16 +154,14 @@ function M.setup()
     }
 
     -- Status line
-    use {
-      "nvim-lualine/lualine.nvim",
+    use {"nvim-lualine/lualine.nvim",
       after = "nvim-treesitter",
       config = function()
         require("config.lualine").setup()
       end,
       wants = "nvim-web-devicons",
     }
-    use {
-      "SmiteshP/nvim-gps",
+    use {"SmiteshP/nvim-gps",
       requires = "nvim-treesitter/nvim-treesitter",
       module = "nvim-gps",
       wants = "nvim-treesitter",
@@ -172,8 +171,7 @@ function M.setup()
     }
 
     -- Treesitter
-    use {
-      "nvim-treesitter/nvim-treesitter",
+    use {"nvim-treesitter/nvim-treesitter",
       opt = true,
       event = "BufRead",
       run = ":TSUpdate",
@@ -247,8 +245,7 @@ function M.setup()
     }
 
     -- Buffer line
-    use {
-      "akinsho/nvim-bufferline.lua",
+    use {"akinsho/nvim-bufferline.lua",
       event = "BufReadPre",
       wants = "nvim-web-devicons",
       config = function()
@@ -257,8 +254,7 @@ function M.setup()
     }
 
     -- User interface
-    use {
-      "stevearc/dressing.nvim",
+    use {"stevearc/dressing.nvim",
       event = "BufEnter",
       config = function()
         require("dressing").setup {
@@ -287,8 +283,7 @@ function M.setup()
       disable = not PLUGINS.coq.enabled,
     }
 
-    use {
-      "hrsh7th/nvim-cmp",
+    use {"hrsh7th/nvim-cmp",
       event = "InsertEnter",
       opt = true,
       config = function()
