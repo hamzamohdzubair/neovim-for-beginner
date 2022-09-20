@@ -71,6 +71,7 @@ local function normal_keymap()
     ["q"] = { "<cmd>q!<CR>", "Quit" },
     -- ["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" },
 
+    e = { "<cmd> NvimTreeToggle<cr>", "files" },
     b = {
       name = "Buffer",
       c = { "<Cmd>BDelete this<Cr>", "Close Buffer" },
