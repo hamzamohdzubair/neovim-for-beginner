@@ -20,9 +20,11 @@ function M.setup()
   }
 
   local mappings = {
-    ["w"] = { "<cmd>update!<CR>", "Save" },
-    ["q"] = { "<cmd>q!<CR>", "Quit" },
+    w = { "<cmd>update!<CR>", "Save" },
+    q = { "<cmd>q!<CR>", "Quit" },
+    o = { "<cmd>up|bp|bd#<cr>" , ":wq buf"},
 
+    e = { "<cmd> NvimTreeToggle<cr>", "files" },
     b = {
       name = "Buffer",
       c = { "<Cmd>bd!<Cr>", "Close current buffer" },
