@@ -69,7 +69,8 @@ local function normal_keymap()
   local keymap = {
     ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
-    -- ["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" },
+    ["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" },
+    o = { "<cmd>up|bp|bd#<cr>" , ":wq buf"},
 
     e = { "<cmd> NvimTreeToggle<cr>", "files" },
     b = {
