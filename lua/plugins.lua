@@ -54,6 +54,10 @@ function M.setup()
     -- Load only when require
     use { "nvim-lua/plenary.nvim", module = "plenary" }
 
+    -- focus
+    use{'beauwilliams/focus.nvim', config=function()require('focus').setup({signcolumn = false})end}
+
+    --
     -- Notification
     use {
       "rcarriga/nvim-notify",
@@ -157,7 +161,7 @@ function M.setup()
     -- use { "tpope/vim-vinegar" }
 
     -- autopairs
-    use('cohama/lexima.vim')
+    -- use('cohama/lexima.vim')
 
     -- surround
     use{'kylechui/nvim-surround',
@@ -269,7 +273,6 @@ function M.setup()
 
     -- IndentLine
     use {"lukas-reineke/indent-blankline.nvim",
-      event = "BufReadPre",
       config = function()
         require("config.indentblankline").setup()
       end,
@@ -340,7 +343,7 @@ function M.setup()
       event = { "InsertEnter" },
       config = function()
         require("better_escape").setup {
-          mapping = { "jk" },
+          mapping = { "kj" },
           timeout = vim.o.timeoutlen,
           keys = "<ESC>",
         }
@@ -682,7 +685,7 @@ function M.setup()
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lua",
         "ray-x/cmp-treesitter",
-        "hrsh7th/cmp-cmdline",
+        -- "hrsh7th/cmp-cmdline",
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-nvim-lsp-signature-help",
@@ -1460,6 +1463,15 @@ function M.setup()
       end,
       disable = true,
     }
+
+    use{'phaazon/mind.nvim',
+      branch = 'v2.2',
+      requires = { 'nvim-lua/plenary.nvim' },
+      config = function()
+        require('mind').setup()
+      end
+    }
+
     use { "tversteeg/registers.nvim", disable = true }
     use {
       "TaDaa/vimade",

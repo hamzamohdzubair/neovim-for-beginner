@@ -15,9 +15,11 @@ function M.setup()
       mappings = {
         list = {
           { key='K', action='cd'},
-          { key={'<cr>', 'l'}, action='edit'},
-          { key='h', action='dir_up'},
+          { key='l', action='edit'},
+          { key='H', action='dir_up'},
           { key='o', action='vsplit'},
+          { key='h', action='close_node'},
+          { key='A', action='toggle_dotfiles'},
         },
       },
     },

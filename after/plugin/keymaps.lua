@@ -18,7 +18,7 @@ keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", default_opts)
 keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", default_opts)
 keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", default_opts)
 keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", default_opts)
-m.i('kj', '<esc>')
+--[[ m.i('kj', '<esc>') ]]
 m.t('kj', '<c-\\><c-n>')
 m.v('kj', '<esc>')
 

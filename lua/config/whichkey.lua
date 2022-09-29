@@ -325,6 +325,10 @@ local function normal_keymap()
       --   },
       -- },
     },
+    a = {
+      name = "yode",
+      j = {"<cmd>YodeCreateSeditorFloating<cr>", "create"}
+    }
   }
   whichkey.register(keymap, opts)
   legendary.bind_whichkey(keymap, opts, false)
