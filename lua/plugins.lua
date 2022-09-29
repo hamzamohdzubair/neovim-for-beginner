@@ -44,6 +44,10 @@ function M.setup()
     -- Load only when require
     use { "nvim-lua/plenary.nvim", module = "plenary" }
 
+    -- focus
+    use{'beauwilliams/focus.nvim', config=function()require('focus').setup({signcolumn = false})end}
+
+    --
     -- Notification
     use {
       "rcarriga/nvim-notify",
@@ -78,7 +82,7 @@ function M.setup()
     -- use { "tpope/vim-vinegar" }
 
     -- autopairs
-    use('cohama/lexima.vim')
+    -- use('cohama/lexima.vim')
 
     -- surround
     use{'kylechui/nvim-surround',
@@ -165,7 +169,7 @@ function M.setup()
     }
 
     -- Better surround
-    use { "tpope/vim-surround", event = "InsertEnter" }
+    -- use { "tpope/vim-surround", event = "InsertEnter" }
 
     -- Motions
     use { "andymass/vim-matchup", event = "CursorMoved" }
@@ -360,7 +364,7 @@ function M.setup()
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lua",
         "ray-x/cmp-treesitter",
-        "hrsh7th/cmp-cmdline",
+        -- "hrsh7th/cmp-cmdline",
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-nvim-lsp-signature-help",
