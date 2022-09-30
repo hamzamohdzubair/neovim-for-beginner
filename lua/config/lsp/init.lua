@@ -198,11 +198,11 @@ function M.on_attach(client, bufnr)
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.semantic_tokens_full()
+          -- vim.lsp.buf.semantic_tokens_full()
         end,
       })
       -- fire it first time on load as well
-      vim.lsp.buf.semantic_tokens_full()
+      -- vim.lsp.buf.semantic_tokens_full()
     end
   end
 end

@@ -60,6 +60,10 @@ local function normal_keymap()
     ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>lua require('utils').quit()<CR>", "Quit" },
     -- ["t"] = { "<cmd>ToggleTerm<CR>", "Terminal" },
+    i = {
+      i = {"<cmd>MindOpenMain<cr>", "mindopen"},
+      o = {"<cmd>MindClose<cr>", "mindclose"}
+    },
 
     a = {
       name = "Attempt",

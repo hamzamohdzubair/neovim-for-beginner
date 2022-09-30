@@ -84,17 +84,12 @@ function M.setup()
 
     -- Colorscheme
     use {
-      "folke/tokyonight.nvim",
-      vim.cmd.colorscheme [[tokyonight]],
-      disable = false,
-    }
-    use {
       "sainnhe/everforest",
       config = function()
         vim.g.everforest_better_performance = 1
-        vim.cmd.colorscheme [[everforest]]
+        vim.cmd "colorscheme everforest"
       end,
-      disable = true,
+      disable = false,
     }
     use {
       "projekt0n/github-nvim-theme",
@@ -483,7 +478,7 @@ function M.setup()
       config = function()
         require("mind").setup()
       end,
-      disable = true,
+      disable = false,
     }
 
     -- Status line
@@ -658,7 +653,7 @@ function M.setup()
           },
         }
       end,
-      disable = false,
+      disable = true,
     }
     use {
       "ray-x/guihua.lua",
@@ -1464,13 +1459,6 @@ function M.setup()
       disable = true,
     }
 
-    use{'phaazon/mind.nvim',
-      branch = 'v2.2',
-      requires = { 'nvim-lua/plenary.nvim' },
-      config = function()
-        require('mind').setup()
-      end
-    }
 
     use { "tversteeg/registers.nvim", disable = true }
     use {
@@ -1501,6 +1489,9 @@ function M.setup()
         }
       end,
     }
+
+    -- ledger
+    use('ledger/vim-ledger')
 
     -- https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim
     -- https://github.com/rbong/vim-buffest

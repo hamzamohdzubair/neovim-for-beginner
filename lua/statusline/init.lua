@@ -22,4 +22,4 @@ local function status_line()
 end
 
 -- vim.opt.statusline = status_line()
-vim.opt.winbar = status_line()
+-- vim.opt.winbar = status_line()
